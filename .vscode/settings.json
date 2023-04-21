@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "guia_4/src",
+        "guia_3/src",
+        "aprendisaje_4/src",
+        "aprendisaje_1/src/aprendisaje_1",
+        "guia_5/vector_1.java/src"
+    ],
+    "git.ignoreLimitWarning": true
+}
