@@ -1,0 +1,125 @@
+public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        Cuenta cuenta = new Cuenta();
+        
+        System.out.println("Ingrese su nombre");
+        cuenta.setTitular(leer.nextLine());
+        
+        do {
+            System.out.println("Cuanto desea retirar de la cuenta?");
+            cuenta.retirar_dinero(leer.nextDouble());
+        } while (cuenta.getSaldo()>0);
+  
+    }
+-----------
+private double saldo=1000;
+    private String titular;
+
+    public Cuenta() {
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+    
+    public void retirar_dinero(double dinero){
+        if (saldo>=dinero) {
+            System.out.println("Se retirara de la cuenta: "+ dinero);
+            saldo-=dinero;
+            System.out.println("Le queda en cuenta: "+ saldo);
+        }else{
+            System.out.println("El dinero que quiere retirar es superior al saldo disponible. atte" + titular + "raton");
+            
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" + "saldo=" + saldo + ", titular=" + titular + '}';
+    }
+Gustavo Ezequiel Gonzalez  a  Todos 20:12
+Crea una clase "Empleado" que tenga atributos como "nombre", "edad" y
+"salario". Luego, crea un método "calcular_aumento" que calcule el
+aumento salarial de un empleado en función de su edad y salario actual.
+El aumento salarial debe ser del 10% si el empleado tiene más de 30
+años o del 5% si tiene menos de 30 años.
+Richard Cuevas 2  a  Todos 20:31
+https://github.com/Richona/ArgPrograma
+https://github.com/BlasAC/Backend_1
+Richard Cuevas 2  a  Todos 20:34
+public static void main(String[] args) {
+        Empleado empleado = new Empleado();
+        
+        empleado.calcular_aumento();
+    }
+_________________________________
+private String nombre;
+    private int edad;
+    private double salario;
+
+    public Empleado() {
+    }
+
+    public Empleado(String nombre, int edad, double salario) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.salario = salario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    
+    public void calcular_aumento(){
+        System.out.println("Ingrese su nombre: ");
+        setNombre(leer.nextLine());
+        
+        System.out.println("Ingrese su edad: ");
+        setEdad(leer.nextInt());
+        
+        System.out.println("Ingrese su salario: ");
+        setSalario(leer.nextDouble());
+        
+        if (getEdad() > 30) {
+            System.out.println("Su salario con aumento del 9,8% es: " + (getSalario() * 1.098));
+        }else{
+            System.out.println("Su salario con aumento del 5% es: " + (getSalario() * 1.05));
+        }
+    }
+    
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", edad=" + edad + ", salario=" + salario + '}';
+    }
