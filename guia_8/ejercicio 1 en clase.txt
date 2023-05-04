@@ -1,0 +1,87 @@
+public class CuentaBancariaServicio {
+private Scanner leer = new Scanner(System.in);
+CuentaBancaria cb = new CuentaBancaria();
+public CuentaBancaria crearcuenta(){
+    System.out.println("ingrese al numero de cuenta: ");
+    int numeroCuenta = leer.nextInt();  
+    System.out.println("Ingrese el DNI del cliente: ");
+    long dniCliente = leer.nextLong();
+    System.out.println("ingrese una cantidad de Saldo: ");
+    double saldoActual = leer.nextInt();
+   
+    CuentaBancaria cb = new CuentaBancaria(numeroCuenta, dniCliente, saldoActual);
+   return cb;
+}
+    public double ingresar(CuentaBancaria nuevosaldo){
+        System.out.println("ingrese el monto a depositar ");
+        double deposito = leer.nextDouble(); 
+        nuevosaldo.setSaldoActual(nuevosaldo.getSaldoActual()+deposito);
+       return nuevosaldo.getSaldoActual();
+        
+}
+    public double retirar(){
+    return retirar();
+    }
+    public void 
+}
+public class CuentaBancaria {
+    private int numeroCuenta;
+    private long dniCliente;
+    private double saldoActual;
+
+    public CuentaBancaria() {
+        
+    }
+
+    public int getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(int numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public long getDniCliente() {
+        return dniCliente;
+    }
+
+    public void setDniCliente(long dniCliente) {
+        this.dniCliente = dniCliente;
+    }
+
+    public double getSaldoActual() {
+        return saldoActual;
+    }
+
+    public void setSaldoActual(double saldoActual) {
+        this.saldoActual = saldoActual;
+    }
+
+    public CuentaBancaria(int numeroCuenta, long dniCliente, double saldoActual) {
+        this.numeroCuenta = numeroCuenta;
+        this.dniCliente = dniCliente;
+        this.saldoActual = saldoActual;
+       
+    }
+ @Override
+    public String toString() {
+        return "CuentaBancaria{" + "numeroCuenta: " + numeroCuenta + ", dniCliente : " + dniCliente + ", saldoActual: " + saldoActual + '}';
+    }
+}
+public class Guia8ejercicio01 {
+
+   
+    public static void main(String[] args) {
+  Scanner leer = new Scanner(System.in);
+  CuentaBancariaServicio c1 =  new CuentaBancariaServicio(); // servicio
+ CuentaBancaria cb =  c1.crearcuenta(); // entidades
+
+        System.out.println(cb.toString());
+
+System.out.println("holaa este es tu banco");
+
+   c1.ingresar(cb);
+        System.out.println(cb.toString());
+    }
+
+}
